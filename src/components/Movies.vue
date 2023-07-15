@@ -129,7 +129,7 @@ export default {
 }
 
 .movie-item {
-    width: 20%;
+    width: 15%;
     height: 40rem;
     margin: 1rem;
 
