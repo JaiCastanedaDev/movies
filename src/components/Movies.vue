@@ -7,13 +7,13 @@
     </div>
         <div class="movies-container">
             <div class="movie-item" v-for="item in filtered" :key="item.id" @click="selectMovie(item)">
-                <li>
+                
                     <a href="#">
                         <img class="img-container" :src="`https://image.tmdb.org/t/p/w300${item.poster_path}`"
                             alt="movie-banner">
                     </a>
                     <div class="title-custom">{{ item.title }}</div>
-                </li>
+            
             </div>
         </div>
 
@@ -116,11 +116,13 @@ export default {
 }
 
 .movies-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 
+    repeat(auto-fit,
+    minmax(15rem, 1fr));
+    gap: 2rem;
     margin: 1rem;
+
 }
 
 .movies-container ul,
@@ -129,18 +131,8 @@ export default {
 }
 
 .movie-item {
-    width: 15%;
-    height: 40rem;
-    margin: 1rem;
-
-}
-
-.img-container {
     width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: auto;
 }
 
 .title-custom {
@@ -148,17 +140,13 @@ export default {
     color: #fff;
     font-size: .8rem;
 }
-
-.img-container img {
-    max-width: 100%;
-    max-height: 100%;
-}
-
 @media (max-width: 747px) {
-    .movie-item {
-        width: 45%;
-        margin: .5rem;
-        height: 18rem;
+    .movies-container{
+        grid-template-columns: 
+    repeat(auto-fit,
+    minmax(8rem, 1fr));
+    gap: 2rem;
+    margin: 1rem;
     }
 }
 </style>
