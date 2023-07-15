@@ -3,15 +3,11 @@
       <nav class="navbar">
         <div class="navbar-start">
           <ul>
+            <i class="fa-solid fa-video"></i>
             <li><a href="#">Inicio</a></li>
             <li><a href="#">Peliculas</a></li>
             <li><a href="#">Generos</a></li>
             <li><a href="#">Series</a></li>
-          </ul>
-        </div>
-        <div class="navbar-end">
-          <ul>
-            <li><a href="#">Buscar</a></li>
           </ul>
         </div>
       </nav>
@@ -19,12 +15,18 @@
   </template>
   
   <script>
+
+
   export default {
     name: 'Navbar'
   }
   </script>
   
   <style scoped>
+  .fa-solid{
+    margin-right: 1rem;
+    color: white;;
+  }
   .navbar {
     width: 97.9%;
     background-color: #851d1d;
